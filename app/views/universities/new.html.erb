@@ -1,0 +1,21 @@
+<h1>University Create</h1>
+
+<%= form_with model: @university, url: universities_path do |form|%>
+   
+    <%= form.hidden_field :user_id, value: Current.user.id%>
+    <div class="form-group">
+        <%=form.label :Name%><br>
+        <%= form.text_field :name,  placeholder: 'Enter Your uni name'%>
+    </div><br>
+        <div class="form-group">
+        <%=form.label :City%><br>
+        <%= form.text_field :city,  placeholder: 'Enter Your City'%>
+    </div><br>
+    <div class="form-group">
+        <%=form.label :Specialization%><br>
+        <%= form.text_field :specialization,  placeholder: 'Enter Your Sepcializtion'%>
+    </div><br>
+    <div class="form-group">
+        <%= form.submit "University Create", class: "btn btn-primary"%>
+    </div>
+<%end%>

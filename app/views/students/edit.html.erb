@@ -1,0 +1,17 @@
+<h1>HEC Edit</h1>
+
+<%= form_with model: @hec do |form|%>
+   
+    <%= form.hidden_field :user_id, value: Current.user.id%>
+    <div class="form-group">
+        <%=form.label :country%><br>
+        <%= form.text_field :country%>
+    </div><br>
+    <div class="form-group">
+        <%=form.label :User_id%><br>
+        <%= form.text_field :user_id%>
+    </div><br>
+    <div class="form-group">
+        <%= form.submit "Update", class: "btn btn-primary"%>
+    </div>
+<%end%>

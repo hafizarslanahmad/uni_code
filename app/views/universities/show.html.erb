@@ -1,0 +1,32 @@
+<h1>HEC Show</h1>
+
+<strong> Name: </strong>
+<%= @university.name %>
+<br>
+<strong> City: </strong>
+<%= @university.city %>
+<br>
+<strong> Specialization: </strong>
+<%= @university.specialization %>
+
+
+<h1>Student Create</h1>
+
+<%= form_with model: @student, url: students_path do |form|%>
+   <%= form.hidden_field :university_id, value: @student.university_id%>
+    <div class="form-group">
+        <%=form.label :Name%><br>
+        <%= form.text_field :name,  placeholder: 'Enter Your  name'%>
+    </div><br>
+        <div class="form-group">
+        <%=form.label :Program%><br>
+        <%= form.text_field :program,  placeholder: 'Enter Your Program'%>
+    </div><br>
+    <div class="form-group">
+        <%=form.label :F_name%><br>
+        <%= form.text_field :f_name,  placeholder: 'Enter Your F_name'%>
+    </div><br>
+    <div class="form-group">
+        <%= form.submit "Student Create", class: "btn btn-primary"%>
+    </div>
+<%end%>

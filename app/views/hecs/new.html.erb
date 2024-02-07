@@ -1,0 +1,13 @@
+<h1>HEC Create</h1>
+
+<%= form_with model: @hec, url: hecs_path do |form|%>
+   
+    <%= form.hidden_field :user_id, value: Current.user.id%>
+    <div class="form-group">
+        <%=form.label :country%><br>
+        <%= form.text_field :country,  placeholder: 'Enter Your Country HEC'%>
+    </div><br>
+    <div class="form-group">
+        <%= form.submit "create", class: "btn btn-primary"%>
+    </div>
+<%end%>
